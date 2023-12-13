@@ -235,7 +235,7 @@ RUN SVGBOB_VERSION=`cat Cargo.toml | grep "svgbob_cli =" | sed -r 's/.*"([^"]+)"
 FROM eclipse-temurin:11.0.20.1_1-jre-jammy
 
 ARG D2_VERSION="0.6.0"
-ARG PLANTUML_VERSION="1.2023.11"
+ARG PLANTUML_VERSION="1.2023.13"
 ARG UMLET_VERSION="2023-03-20_UMLet_v15.1"
 ARG GRAPHVIZ_VERSION="9.0.0"
 ARG DITAA_VERSION="1.0.3"
@@ -290,7 +290,7 @@ RUN wget "https://github.com/terrastruct/d2/releases/download/v${D2_VERSION}/d2-
     mv usr/bin/d2-v${D2_VERSION}/bin/d2 /usr/bin/d2 && \
     chmod +x /usr/bin/d2
 
-RUN wget "https://github.com/yuzutech/plantuml/releases/download/v${PLANTUML_VERSION}/plantuml-linux-${TARGETARCH}-${PLANTUML_VERSION}" -O /usr/bin/plantuml && \
+RUN wget "https://github.com/gijsentius/plantuml/releases/download/v${PLANTUML_VERSION}/plantuml-linux-${TARGETARCH}-${PLANTUML_VERSION}" -O /usr/bin/plantuml && \
     chmod +x /usr/bin/plantuml
 
 RUN wget "https://github.com/yuzutech/umlet/releases/download/${UMLET_VERSION}/umlet-linux-${TARGETARCH}" -O /usr/bin/umlet && \
